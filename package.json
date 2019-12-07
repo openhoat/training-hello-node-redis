@@ -1,0 +1,25 @@
+{
+  "name": "hello-node-redis",
+  "version": "0.0.1",
+  "description": "Training about docker, nodejs and redis",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "beautify": "prettier -l **/*.js",
+    "beautify:fix": "prettier --write **/*.js",
+    "lint": "eslint --max-warnings=0 .",
+    "lint:fix": "eslint --fix ."
+  },
+  "author": "Olivier Penhoat <openhoat@gmail.com> (http://headwood.net/)",
+  "license": "ISC",
+  "dependencies": {
+    "express": "4.17.1",
+    "ioredis": "4.14.1"
+  },
+  "devDependencies": {
+    "eslint": "6.7.2",
+    "eslint-config-prettier": "6.7.0",
+    "eslint-plugin-prettier": "3.1.1",
+    "prettier": "1.19.1"
+  }
+}
