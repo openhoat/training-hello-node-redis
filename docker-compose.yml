@@ -1,0 +1,26 @@
+version: '3'
+
+services:
+  redis:
+    image: redis:5.0-alpine
+    container_name: hello-redis
+    expose:
+      - 6379
+    network_mode: bridge
+    restart: unless-stopped
+
+  app:
+    build:
+      context: .
+    container_name: hello-app
+    links:
+      - redis:redis
+    environment:
+      REDIS_HOST: redis
+      REDIS_PORT: 6379
+    ports:
+      - 3000:3000
+    network_mode: bridge
+    restart: unless-stopped
+    depends_on:
+      - redis
